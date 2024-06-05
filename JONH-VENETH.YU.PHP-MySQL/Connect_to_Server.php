@@ -3,7 +3,7 @@
 $Hostname="localhost:3307";
 $UsernameDB="utente1";
 $PasswordDB="utente1";
-$NomeDB ="testdb";
+$NomeDB ="test";
 
 //tabelle utilizzata per la fare interazioni con il data base
 $User_table = "Tabella_user";

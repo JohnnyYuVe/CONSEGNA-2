@@ -27,11 +27,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
 
-		      	<label for="uname"><b>Username</b></label>
-		      		<input type="text" placeholder="Enter Username" name="uname" required>
+		      	<label for="Username"><b>Username</b></label>
+		      		<input type="text" placeholder="Enter Username" name="Username" required>
 
-		      	<label for="psw"><b>Password</b></label>
-		      		<input type="password" placeholder="Enter Password" name="psw" required>
+		      	<label for="Password"><b>Password</b></label>
+		      		<input type="password" placeholder="Enter Password" name="Password" required>
 		        
 		      	<button type="submit" name="invio">Login</button>
 		      	<button type="submit" name="reset">Reset</button>
@@ -48,41 +48,51 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 </html>
 
+
+
 <?php 
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$User_table = "Tabella_user";
-//querry utilizzato per il login
-$Query1="SELECT *
-          FROM $User_table
- 		  WHERE Username = \"{$_POST['Username']}\" AND Password =\"{$_POST['Password']}\"
-		";
+
 
 //controllo dei dati proveniente dalla form LOGIN
-	if( isset($_POST['invio'])  ){					
-							if(!isset($_POST['Username'])){echo"Username MANCANTE";}	
-							if(!isset($_POST['Password'])){echo"Password MANCANTE";}
-	}
+if( isset($_POST['invio']) ){				
+		if(empty($_POST['Username']) || empty($_POST['Password']) ){
+							echo "<p>dati mancanti!!!</p>";	
+		}else{
+					
+			$User_table = "tabella_user";
 
-	if (!$Risultato_query = mysqli_query($mysqliConnection, $Query1)){
-											  printf("Nessun risutato\n");
-										      exit();
- 	}
+			//querry utilizzato per il login
+			$Query1="SELECT *
+				     FROM $User_table
+				 	 WHERE Username = \"{$_POST['Username']}\" AND Password =\"{$_POST['Password']}\"
+					";
 
-$Riga = mysqli_fetch_array($Risultato_query);
+				if (!$Risultato_query = mysqli_query($mysqliConnection, $Query1)){
+					printf("Nessun risutato\n");
+					 exit();
 
-// carico le infromazioni dell'utente dentro la sessione;
+				}
+				$Riga = mysqli_fetch_array($Risultato_query);
 
+				// carico le infromazioni dell'utente dentro la sessione;
+				if($Riga){			
+							echo"Inserimento dati nella sessione";
+							session_start();
+							$_SESSION['Nome']=$Riga['Nome'];
+							$_SESSION['Cognome']=$Riga['Cognome'];
+							$_SESSION['Username']=$Riga['Username'];
+							$_SESSION['Password']=$Riga['Password'];
+							header('Location: http://localhost/php_program/MAIN.php');		
+				}else{
+					echo"Accesso negato";
+				}
 
-if($Riga){
-					session_start();
-					$_SESSION['Nome']=$Riga['Nome'];
-					$_SESSION['Cognome']=$Riga['Cognome'];
-					$_SESSION['Username']=$Riga['Username'];
-					$_SESSION['Password']=$Riga['Password'];
-					header('Location: nomeFile.php');			
+		}
+}
 
-}else{echo"Accesso negato";}
 ?>
 

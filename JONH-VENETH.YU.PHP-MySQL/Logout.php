@@ -25,7 +25,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	
 	<hr />
 	
-<li><a href="mysql.ST.login.php" alt="aa">torna a login</a></li>
+<li><a href="Login1.php" alt="aa">torna a login</a></li>
 	
 	<hr />
 

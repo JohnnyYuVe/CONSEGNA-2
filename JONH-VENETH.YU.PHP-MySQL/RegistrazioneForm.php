@@ -52,46 +52,34 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
-//querry utilizzato per la registrazione(aggiunta informazione utente appena registrato)
-	$User_table = "Tabella_user";
 
-	 $Query2="INSERT INTO $User_table ( Nome, Cognome,Username,Password)
-         VALUES
-	($_POST['Nome'] ,$_POST['Cognome'],$_POST['Username'],$_POST['Password'] )
-        ";
+
+	
 
 
     //controllo dei dati proveniente dalla form REGISTRAZIONI
-	if( isset($_POST['invio'])  ){
-							if(!isset($_POST['Nome'])){echo"Nome MANCANTE";}
-							if(!isset($_POST['Cognome'])){echo"Cognome MANCANTE";}
-							if(!isset($_POST['Username'])){echo"Username MANCANTE";}	
-							if(!isset($_POST['Password'])){echo"Password MANCANTE";}
+if( isset($_POST['invio'])  ){
+	if( empty($_POST['Nome']) || empty($_POST['Cognome']) || empty($_POST['Username'])|| empty($_POST['Password']) ){
+		echo "mancano delle informazioni";
+	}else{
 
-	}
+//querry utilizzato per la registrazione(aggiunta informazione utente appena registrato)
+	$User_table = "tabella_user";
+
+	$Query2="INSERT INTO $User_table( Nome, Cognome, Username, Password)
+	         VALUES
+			 ('".$_POST['Nome']. "','" .$_POST['Cognome']. "','" .$_POST['Username']. "','" .$_POST['Password']. "'" . ")";
 
 	if (!$Risultato_query = mysqli_query($mysqliConnection, $Query2)){
-											  printf("Nessun risutato\n");
-										      exit();
- 	}
-
-
-//estrazione informazioni utente dalla tabella user.
-$Riga = mysqli_fetch_array($Risultato_query);
-
-// carico le infromazioni dell'utente dentro la sessione;
-if($Riga){
-					session_start();
-					$_SESSION['Nome']=$Riga['Nome'];
-					$_SESSION['Cognome']=$Riga['Cognome'];
-					$_SESSION['Username']=$Riga['Username'];
-					$_SESSION['Password']=$Riga['Password'];
-					header('Location: login1.php');			
-
-}else{echo"Accesso negato";}
-
+												  echo"Registrazione fallita";
+												  printf("Nessun risutato\n");
+											      exit();
+ 	}else{  
+ 	echo"Registrazione avvenuta con successo";    
+	header('Location: MAIN.php');			
+	}	
+	}
+}
 
 ?>	
