@@ -14,49 +14,49 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 <head>	
 		<title>Register</title>
-		<style></style>
+		<link rel="stylesheet" href="StileSito.css">
 </head>	
-
 <body>	
 
-<!--inizio metodo di registrazione-->
 
-<h2>Register Form</h2>
-	<div class="container-Register">    
-		
+<h2 style="text-align: center;">Register Form</h2>
+
+
+<div class="Box_Container_Input">    		
 		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
 
-			<label for="Nome"><b>Nome</b></label>
-	      		<input type="text" placeholder="Enter Nome" name="Nome" required>
-
-	      	<label for="Cognome"><b>Cognome</b></label>
-	      		<input type="text" placeholder="Enter Cognome" name="Cognome" required>
-
-	      	<label for="Cognome"><b>Cod. Fiscale</b></label>
-	      		<input type="text" placeholder="Enter C.F" name="C_F" required>	
-
-	      	<label for="Username"><b>Username</b></label>
-	      		<input type="text" placeholder="Enter Username" name="Username" required>	
-
-	      	<label for="Password"><b>Password</b></label>
-	      		<input type="password" placeholder="Enter Password" name="Password" required>
-
-	      	<label for="Password"><b>Email</b></label>
-	      		<input type="password" placeholder="Enter Password" name="Email" required>
-
-	      	<label for="Password"><b>ID_CLIENTE</b></label>
-	      		<input type="password" placeholder="Enter ID_CLIENTE" name="ID_CLIENTE" required>	
+			<label for="Nome"><b>Nome</b></label></br>
+	      		<input type="text" class="BOX_INPUT" placeholder="Enter Nome" name="Nome" required>
+	      		</br>
+	      	<label for="Cognome"><b>Cognome</b></label></br>
+	      		<input type="text" class="BOX_INPUT" placeholder="Enter Cognome" name="Cognome" required>
+	      		</br>
+	      	<label for="Cognome"><b>Cod. Fiscale</b></label></br>
+	      		<input type="text" class="BOX_INPUT" placeholder="Enter C.F" name="C_F" required>	
+	      		</br>
+	      	<label for="Username"><b>Username</b></label></br>
+	      		<input type="text" class="BOX_INPUT" placeholder="Enter Username" name="Username" required>	
+	      		</br>
+	      	<label for="Password"><b>Password</b></label></br>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required>
+	      		</br>
+	      	<label for="Password"><b>Email</b></label></br>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Email" required>
+	      		</br>
+	      	<label for="Password"><b>ID_CLIENTE</b></label></br>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter ID_CLIENTE" name="ID_CLIENTE" required>	</br>	
 	        
-	      	<button type="submit" name="invio">Login</button>
-	      	<button type="submit" name="reset">Reset</button>
+	      	<button type="submit" class="BOX_BUTTON" name="invio">Login</button>
+	      	
+	      	<button type="submit" class="BOX_BUTTON" name="reset">Reset</button>
 	      
 
 	    </form> 
-	</div>
-<!--fine metodo di registrazione-->
+	
+</div>
 
-	</body>
+</body>
 </html>
 
 

@@ -15,7 +15,7 @@ $mysqliConnection = new mysqli($Hostname, $UsernameDB, $PasswordDB, $NomeDB);
 if ($mysqliConnection->connect_error) {
                         die("connection failed". $mysqliConnection->connect_error);
 }else{
-	echo "Connessione avvenuta con successo";
+	echo "Connessione al server phpmyadmin avvenuta con successo";
 }
 
 ?>

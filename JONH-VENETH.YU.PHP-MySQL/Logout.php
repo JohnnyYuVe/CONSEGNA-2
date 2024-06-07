@@ -14,20 +14,21 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 			<title>logout</title>
+			<link rel="stylesheet" href="StileSito.css">
 	</head>
 
 <body>
 	
+<div class="Box_Container_Input">	
+
 	
-	<hr />
+	<div class="text">  <p>ARRIVEDERCI </br></p>  </div>
 	
-	<h3>ARRIVEDERCI </h3>
 	
-	<hr />
 	
-<li><a href="Login1.php" alt="aa">torna a login</a></li>
+<div class="BOTTON">  <a href="Login1.php" alt="aa">torna a login</a>  </div>
 	
-	<hr />
+</div>	
 
 </body>
 

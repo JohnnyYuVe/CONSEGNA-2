@@ -14,36 +14,44 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 <head>	
 		<title>Login</title>
-		<style></style>
+		
+		<link rel="stylesheet" href="StileSito.css">
+		
 </head>	
+
+
+
 
 <body>	
 
+<h2 style="text-align: center; font-size: 40px;"> Login Form</h2>	
+		
+<div class="Box_Container_Input">	
 
-<!--inizio metodo di login-->
-<h2> Login Form</h2>	
-	<div class="container-login">    		
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
-			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+		    <label for="Username"><b>Username</b></label></br>
+		      		<input type="text" class="BOX_INPUT" placeholder="Enter Username" name="Username" required>
+		      	</br>
+		    <label for="Password"><b>Password</b></label></br>
+		      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required></br>
+		
 
+		
+		      		<button type="submit" class="BOX_BUTTON" name="invio">Login</button>
+		      	
+		      		<button type="submit" class="BOX_BUTTON" name="reset">Reset</button>
+	    
 
-		      	<label for="Username"><b>Username</b></label>
-		      		<input type="text" placeholder="Enter Username" name="Username" required>
-
-		      	<label for="Password"><b>Password</b></label>
-		      		<input type="password" placeholder="Enter Password" name="Password" required>
-		        
-		      	<button type="submit" name="invio">Login</button>
-		      	<button type="submit" name="reset">Reset</button>
-	      	
-
-				<label>
-					<input type="checkbox" checked="checked" name="remember"> Remember me
-				</label>
+<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
 
 	    </form> 
-	</div>
-<!--fine metodo di login-->
+	
+</div>
+
+
+
+
 </body>
 
 </html>
@@ -63,12 +71,12 @@ if( isset($_POST['invio']) ){
 							echo "<p>dati mancanti!!!</p>";	
 		}else{
 					
-			$User_table = "tabella_user";
+			$User_table = "utente_tab";
 
 			//querry utilizzato per il login
 			$Query1="SELECT *
 				     FROM $User_table
-				 	 WHERE Username = \"{$_POST['Username']}\" AND Password =\"{$_POST['Password']}\"
+				 	 WHERE USERNAME = \"{$_POST['Username']}\" AND PASSWORD =\"{$_POST['Password']}\"
 					";
 
 				if (!$Risultato_query = mysqli_query($mysqliConnection, $Query1)){
