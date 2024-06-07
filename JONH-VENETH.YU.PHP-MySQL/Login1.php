@@ -74,7 +74,7 @@ if( isset($_POST['invio']) ){
 				if (!$Risultato_query = mysqli_query($mysqliConnection, $Query1)){
 					printf("Nessun risutato\n");
 					 exit();
-
+					 
 				}
 				$Riga = mysqli_fetch_array($Risultato_query);
 
