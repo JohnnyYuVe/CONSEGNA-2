@@ -26,7 +26,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	
 	
 	
-<div class="BOTTON">  <a href="Login1.php" alt="aa">torna a login</a>  </div>
+<div class="BOX_BOTTONE">  <a href="Login1.php" alt="aa">torna a login</a>  </div>
 	
 </div>	
 

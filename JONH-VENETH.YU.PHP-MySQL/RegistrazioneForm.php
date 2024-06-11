@@ -15,46 +15,61 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <head>	
 		<title>Register</title>
 		<link rel="stylesheet" href="StileSito.css">
-</head>	
+</head>
+
 <body>	
 
 
 <h2 style="text-align: center;">Register Form</h2>
 
+  		
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="Box_Container_Input">
 
-<div class="Box_Container_Input">    		
-		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+		<div >
+			<label for="Nome"><b>Nome</b></br></label>
+	      	<input type="text" class="BOX_INPUT" placeholder="Enter Nome" name="Nome" required>
+	      </div> 	
 
-
-			<label for="Nome"><b>Nome</b></label></br>
-	      		<input type="text" class="BOX_INPUT" placeholder="Enter Nome" name="Nome" required>
-	      		</br>
-	      	<label for="Cognome"><b>Cognome</b></label></br>
+	     	 <div >	
+	      	<label for="Cognome"><b>Cognome</b></br></label>
 	      		<input type="text" class="BOX_INPUT" placeholder="Enter Cognome" name="Cognome" required>
-	      		</br>
-	      	<label for="Cognome"><b>Cod. Fiscale</b></label></br>
-	      		<input type="text" class="BOX_INPUT" placeholder="Enter C.F" name="C_F" required>	
-	      		</br>
-	      	<label for="Username"><b>Username</b></label></br>
-	      		<input type="text" class="BOX_INPUT" placeholder="Enter Username" name="Username" required>	
-	      		</br>
-	      	<label for="Password"><b>Password</b></label></br>
-	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required>
-	      		</br>
-	      	<label for="Password"><b>Email</b></label></br>
-	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Email" required>
-	      		</br>
-	      	<label for="Password"><b>ID_CLIENTE</b></label></br>
-	      		<input type="password" class="BOX_INPUT" placeholder="Enter ID_CLIENTE" name="ID_CLIENTE" required>	</br>	
-	        
-	      	<button type="submit" class="BOX_BUTTON" name="invio">Login</button>
-	      	
-	      	<button type="submit" class="BOX_BUTTON" name="reset">Reset</button>
-	      
+	      	</div>	
 
-	    </form> 
+	      	<div >	
+	      	<label for="Cognome"><b>Cod. Fiscale</b></br></label>
+	      		<input type="text" class="BOX_INPUT"  placeholder="Enter C.F" name="C_F" required>	
+	      	</div>
+
+	      	
+	      	<div >
+	      	<label for="Username"><b>Username</b></br></label>
+	      		<input type="text" class="BOX_INPUT" placeholder="Enter Username" name="Username" required>	
+	      	</div>	
+
+	      	<div >	
+	      	<label for="Password"><b>Password</b></br></label>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required>
+	      	</div>	
+
+	    	<div >
+	      	<label for="Password"><b>Email</b></br></label>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Email" required>
+	      	</div>	
+
+	      	<div >
+	      	<label for="Password"><b>ID_CLIENTE</b></br></label>
+	      		<input type="password" class="BOX_INPUT" placeholder="Enter ID_CLIENTE" name="ID_CLIENTE" required>    
+	      	</div>	
+	       
+	      <div >	
+	      	<button type="submit" class="BOX_BOTTONE"  name="invio">Login</button>	
+	      	<button type="submit" class="BOX_BOTTONE" name="reset">Reset</button>	
+	      </div>
+	       
+
+</form> 
 	
-</div>
+
 
 </body>
 </html>

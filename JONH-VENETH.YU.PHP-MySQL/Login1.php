@@ -4,7 +4,6 @@ error_reporting(E_ALL);
 require("Connect_to_Server.php");
 ?>
 
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
 PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -26,30 +25,32 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 <h2 style="text-align: center; font-size: 40px;"> Login Form</h2>	
 		
-<div class="Box_Container_Input">	
 
-<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
-		    <label for="Username"><b>Username</b></label></br>
+<form action="<?php $_SERVER['PHP_SELF'] ?>" class="Box_Container_Input" method="post">
+
+		   
+
+		<div >
+		    <label for="Username"><b>Username</b></br></label>
 		      		<input type="text" class="BOX_INPUT" placeholder="Enter Username" name="Username" required>
-		      	</br>
-		    <label for="Password"><b>Password</b></label></br>
-		      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required></br>
-		
+		</div> 
+
+		<div >      
+		    <label for="Password"><b>Password</b></br></label>
+		      		<input type="password" class="BOX_INPUT" placeholder="Enter Password" name="Password" required>
+		</div> 
 
 		
-		      		<button type="submit" class="BOX_BUTTON" name="invio">Login</button>
-		      	
-		      		<button type="submit" class="BOX_BUTTON" name="reset">Reset</button>
-	    
+		      	<div >	
+		      		<button type="submit" class="BOX_BOTTONE" name="invio">Login</button>		      
+		      		<button type="submit" class="BOX_BOTTONE" name="reset">Reset</button>
+	    		</div> 
 
 <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
 
 	    </form> 
 	
-</div>
-
-
 
 
 </body>
@@ -90,10 +91,11 @@ if( isset($_POST['invio']) ){
 				if($Riga){			
 							echo"Inserimento dati nella sessione";
 							session_start();
-							$_SESSION['Nome']=$Riga['Nome'];
-							$_SESSION['Cognome']=$Riga['Cognome'];
-							$_SESSION['Username']=$Riga['Username'];
-							$_SESSION['Password']=$Riga['Password'];
+							$_SESSION['cliente_id']=$Riga['ID_CLIENTE'];
+							$_SESSION['Nome']=$Riga['NOME'];
+							$_SESSION['Cognome']=$Riga['COGNOME'];
+							$_SESSION['Username']=$Riga['USERNAME'];
+							$_SESSION['Password']=$Riga['PASSWORD'];
 							header('Location: http://localhost/php_program/MAIN.php');		
 				}else{
 					echo"Accesso negato";

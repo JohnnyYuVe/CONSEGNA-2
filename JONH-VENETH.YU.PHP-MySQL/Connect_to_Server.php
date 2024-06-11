@@ -3,10 +3,9 @@
 $Hostname="localhost:3307";
 $UsernameDB="utente1";
 $PasswordDB="utente1";
-$NomeDB ="test";
+$NomeDB ="sito_web";
 
 //tabelle utilizzata per la fare interazioni con il data base
-$User_table = "Tabella_user";
 
 //connessione con il server myphpadmin per poter accedere ai database;
 $mysqliConnection = new mysqli($Hostname, $UsernameDB, $PasswordDB, $NomeDB);
