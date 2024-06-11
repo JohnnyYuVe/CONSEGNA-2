@@ -1,7 +1,7 @@
 <?php 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-require("Connect_to_Server.php"); 
+require_once("Connect_to_Server.php"); 
 
 							session_start();
 							echo"</br>qui trovi un piccolo feedback su quello che sta accadendo";
